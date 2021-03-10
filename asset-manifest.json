@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Woodroll/intedly/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/Woodroll/intedly/static/js/main.c3de4a59.chunk.js",
+    "main.js.map": "/Woodroll/intedly/static/js/main.c3de4a59.chunk.js.map",
+    "runtime-main.js": "/Woodroll/intedly/static/js/runtime-main.59163bb0.js",
+    "runtime-main.js.map": "/Woodroll/intedly/static/js/runtime-main.59163bb0.js.map",
+    "static/js/2.22f1b3e9.chunk.js": "/Woodroll/intedly/static/js/2.22f1b3e9.chunk.js",
+    "static/js/2.22f1b3e9.chunk.js.map": "/Woodroll/intedly/static/js/2.22f1b3e9.chunk.js.map",
+    "static/js/3.ae3b5886.chunk.js": "/Woodroll/intedly/static/js/3.ae3b5886.chunk.js",
+    "static/js/3.ae3b5886.chunk.js.map": "/Woodroll/intedly/static/js/3.ae3b5886.chunk.js.map",
+    "index.html": "/Woodroll/intedly/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/Woodroll/intedly/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.22f1b3e9.chunk.js.LICENSE.txt": "/Woodroll/intedly/static/js/2.22f1b3e9.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Woodroll/intedly/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59163bb0.js",
+    "static/js/2.22f1b3e9.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.c3de4a59.chunk.js"
+  ]
+}
