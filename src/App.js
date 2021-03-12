@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Row, Container, Col } from 'react-bootstrap';
 import './App.css';
+import './Calendar.css'
+import Calendar from "./components/calendar"
 
 function App() {
+  
+  const [currentMonth, setCurrentMonth] = useState(new Date())
+  const [selectedDate, setSelectedDate] = useState(new Date())
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container fluid>
+      <Row className="App-header">
+        <Col><h1>Intedly</h1></Col>
+      </Row>
+        <Row>
+          <Col><Calendar 
+            currentMonth = {currentMonth}
+            setCurrentMonth = {setCurrentMonth}
+            selectedDate = {selectedDate}
+            setSelectedDate = {setSelectedDate}
+            /></Col>
+          <Col>Info</Col>
+        </Row>
+      </Container>
   );
 }
 
