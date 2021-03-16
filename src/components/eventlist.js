@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {format} from "date-fns";
 
 var list = [
     {'summary': 'Showing',
@@ -54,16 +55,21 @@ var list = [
     },
 ];
 
-const EventsList = () => {
+const EventsList = (props) => {
     const [events, setEvents] = useState(list)
+    const { currentMonth, setCurrentMonth, selectedDate, setSelectedDate } = props;
+    const dateFormat = "cccc, MMMM dd, yyyy";
     return (
+      <>
+      <h2>{format(selectedDate, dateFormat)}</h2>
       <ul className="calendar-dates">
-        {list.map( item =>
+        {events.map( item =>
             <li className="event">
           <h2>{item.summary}</h2>
         </li>
         )}
       </ul>
+      </>
     )
 }
 

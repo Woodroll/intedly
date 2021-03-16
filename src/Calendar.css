@@ -47,7 +47,7 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     background: var(--bg-color);
-    position: relative;
+    /* position: relative; */
 }
 
 header {

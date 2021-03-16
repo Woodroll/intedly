@@ -73,6 +73,7 @@ const Calendar = (props) => {
               >
                 <span className="number">{formattedDate}</span>
                 <span className="bg">{formattedDate}</span>
+                <span>🏡</span>
               </div>
             );
             day = addDays(day, 1);
@@ -102,11 +103,11 @@ const Calendar = (props) => {
     };
 
     return (
-        <div className="calendar">
+        <>
             {renderHeader()}
             {renderDays()}
             {renderCells()}
-        </div>
+        </>
         );
 }
 
