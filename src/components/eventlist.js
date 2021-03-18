@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {format} from "date-fns";
+import EventButton from './EventButton';
 
 var list = [
     {'summary': 'Showing',

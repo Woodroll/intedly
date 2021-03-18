@@ -1,7 +1,11 @@
 
-import React from "react";
+import React, {useRef} from "react";
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Button from 'react-bootstrap/Button';
 import dateFns, {format, addMonths, subMonths, startOfWeek, addDays,
     startOfMonth, endOfMonth, endOfWeek, isSameMonth, isSameDay, parse } from "date-fns";
+import EventButton from "./EventButton";
 
 const Calendar = (props) => {
     // state = {
@@ -9,7 +13,16 @@ const Calendar = (props) => {
     //     selectedDate: new Date()
     // };
 
-    const { currentMonth, setCurrentMonth, selectedDate, setSelectedDate } = props;
+    const { currentMonth, setCurrentMonth, selectedDate, setSelectedDate, list } = props;
+    const inputEl = useRef(null);
+    
+    let eventList = {}
+    list.forEach(event =>{
+      const edate = format (new Date(event.start.dateTime), "d");
+      eventList[edate]? eventList[edate].push(event): eventList[edate] = [event];
+    });
+
+    console.log(eventList);
 
     const renderHeader = () => { 
         const dateFormat = "MMMM yyyy";
@@ -72,8 +85,11 @@ const Calendar = (props) => {
                 onClick={() => onDateClick(cloneDay)}
               >
                 <span className="number">{formattedDate}</span>
-                <span className="bg">{formattedDate}</span>
-                <span>🏡</span>
+                <span className='Event'>{isSameMonth(day, monthStart) && eventList[formattedDate]?
+                eventList[formattedDate].map(element => <EventButton event={element}/>)
+                :""}</span>
+                {/* <span className="bg">{formattedDate}</span> */}
+
               </div>
             );
             day = addDays(day, 1);
@@ -85,7 +101,7 @@ const Calendar = (props) => {
           );
           days = [];
         }
-        return <div className="body">{rows}</div>;
+        return <div ref={inputEl} className="body">{rows}</div>;
       }
     
     const onDateClick = day => {
@@ -107,6 +123,7 @@ const Calendar = (props) => {
             {renderHeader()}
             {renderDays()}
             {renderCells()}
+            {console.log(inputEl)}
         </>
         );
 }

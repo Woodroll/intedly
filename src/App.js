@@ -10,11 +10,63 @@ import Col from 'react-bootstrap/Col';
 
 function App() {
   
+  var list = [
+    {'summary': 'Showing',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2021-03-28T09:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'end': {
+      'dateTime': '2021-03-28T10:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'attendees': [
+      {'email': 'lpage@example.com'},
+      {'email': 'sbrin@example.com'},
+    ],
+    },
+
+    {'summary': 'Showing',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2021-03-28T12:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'end': {
+      'dateTime': '2015-05-28T14:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'attendees': [
+      {'email': 'lpage@example.com'},
+      {'email': 'sbrin@example.com'},
+    ],
+    },
+
+    {
+    'summary': 'Google I/O 2015',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2021-03-29T09:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'end': {
+      'dateTime': '2021-05-29T17:00:00-07:00',
+      'timeZone': 'America/Los_Angeles',
+    },
+    'attendees': [
+      {'email': 'lpage@example.com'},
+      {'email': 'sbrin@example.com'},
+    ],
+    },
+  ];
+
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [calEvents, setCalEvents] = useState();
-
-
+  const [calEvents, setCalEvents] = useState(list);
 
   return (
       <Container fluid>
@@ -27,6 +79,7 @@ function App() {
             setCurrentMonth = {setCurrentMonth}
             selectedDate = {selectedDate}
             setSelectedDate = {setSelectedDate}
+            list = {calEvents}
             />
           </Col>
           <Col className="calendar" md={8} ><Calendar 
@@ -34,27 +87,10 @@ function App() {
             setCurrentMonth = {setCurrentMonth}
             selectedDate = {selectedDate}
             setSelectedDate = {setSelectedDate}
+            list = {calEvents}
             />
           </Col>
         </Row>
-        
-    <Row className="justify-content-md-center">
-    <Col xs lg="2">
-      1 of 3
-    </Col>
-    <Col md="auto">Variable width content</Col>
-    <Col xs lg="2">
-      3 of 3
-    </Col>
-  </Row>
-  <Row>
-    <Col>1 of 3</Col>
-    <Col md="auto">Variable width content</Col>
-    <Col xs lg="2">
-      3 of 3
-    </Col>
-  </Row>
-
   </Container>
   );
 }
