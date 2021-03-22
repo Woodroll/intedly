@@ -57,8 +57,8 @@ var list = [
 ];
 
 const EventsList = (props) => {
-    const [events, setEvents] = useState(list)
-    const { currentMonth, setCurrentMonth, selectedDate, setSelectedDate } = props;
+    const { events, currentMonth, setCurrentMonth, selectedDate, 
+      setCurrentEvent, currentEvent, setSelectedDate } = props;
     const dateFormat = "cccc, MMMM dd, yyyy";
     return (
       <>
@@ -70,6 +70,12 @@ const EventsList = (props) => {
         </li>
         )}
       </ul>
+      {currentEvent? (
+      <div>  
+      <h2>Current Event:</h2>
+      <p>{currentEvent?.description}</p>
+      </div>
+      ):<p>Click an event.</p>}
       </>
     )
 }

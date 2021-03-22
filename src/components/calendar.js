@@ -86,7 +86,7 @@ const Calendar = (props) => {
               >
                 <span className="number">{formattedDate}</span>
                 <span className='Event'>{isSameMonth(day, monthStart) && eventList[formattedDate]?
-                eventList[formattedDate].map(element => <EventButton event={element}/>)
+                eventList[formattedDate].map(element => <EventButton event={element} setCurrentEvent = {props.setCurrentEvent}/>)
                 :""}</span>
                 {/* <span className="bg">{formattedDate}</span> */}
 

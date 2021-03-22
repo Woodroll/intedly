@@ -67,6 +67,7 @@ function App() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [calEvents, setCalEvents] = useState(list);
+  const [currentEvent, setCurrentEvent] = useState({});
 
   return (
       <Container fluid>
@@ -79,7 +80,9 @@ function App() {
             setCurrentMonth = {setCurrentMonth}
             selectedDate = {selectedDate}
             setSelectedDate = {setSelectedDate}
-            list = {calEvents}
+            events = {calEvents}
+            setCurrentEvent = {setCurrentEvent}
+            currentEvent = {currentEvent}
             />
           </Col>
           <Col className="calendar" md={8} ><Calendar 
@@ -88,6 +91,8 @@ function App() {
             selectedDate = {selectedDate}
             setSelectedDate = {setSelectedDate}
             list = {calEvents}
+            setCurrentEvent = {setCurrentEvent}
+            currentEvent = {currentEvent}
             />
           </Col>
         </Row>

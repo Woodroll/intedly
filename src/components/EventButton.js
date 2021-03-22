@@ -5,9 +5,12 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import {format} from 'date-fns';
 
 const EventButton = (props) => {
+    const {setCurrentEvent} = props
+    
     const calEvent = props.event;
     const {summary, description, start, end} = calEvent
     const dateFormatPopover = "cccc, MMMM dd, yyyy";
+    console.log(typeof props.event)
     
     const popover = (
         <Popover id="popover-basic">
@@ -23,7 +26,7 @@ const EventButton = (props) => {
     
     return (
             <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
-            <Button variant="success">🏠</Button>
+            <Button onClick={() => setCurrentEvent(calEvent)} variant="success">🏠</Button>
             </OverlayTrigger>
     )
 }
